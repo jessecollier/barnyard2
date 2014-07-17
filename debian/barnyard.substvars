@@ -1,0 +1,2 @@
+shlibs:Depends=libc6 (>= 2.4), libpcap0.8 (>= 0.9.8), libmysqlclient18 (>=5.5.37)
+misc:Depends=

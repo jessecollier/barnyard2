@@ -1,0 +1,14 @@
+# Spesify which IDS you are using (Snort or Suricata)
+IDSSYS="snort"
+#IDSSYS="suricata"
+
+# If you have the *-msg.map and classification file
+# in the /etc/$IDSSYS/ dir, you are good to go...
+CONFIG="/etc/barnyard2/barnyard2.conf"
+IDS_LOG="/var/log/$IDSSYS/"
+IDS_GEN="/etc/$IDSSYS/gen-msg.map"
+IDS_SID="/etc/$IDSSYS/sid-msg.map"
+IDS_CLASS="/etc/$IDSSYS/classification.config"
+UNIFILE="unified2.alert"
+WALDO="/var/log/barnyard2/waldo.file"
+ARCHIVEDIR="/var/log/barnyard2/"

@@ -1,0 +1,89 @@
+#!/bin/bash
+#
+### BEGIN INIT INFO
+# Provides:          barnyard2
+# Required-Start:    $snort $sguil-sensor-pcap
+# Required-Stop:     $snort $sguil-sensor-pcap
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Barnyard2 - The output spool reader for snort 
+# Description: Barnyard2 - The output spool reader for snort      
+#   This program decouples output overhead from the Snort network intrusion
+#   detection system and allows Snort to run at full speed. It takes input
+#   and output plugins and can therefore be used to convert almost any
+#   spooled file.
+#
+### END INIT INFO
+
+# source function library
+. /lib/lsb/init-functions
+
+# source defaults
+. /etc/default/barnyard2
+
+DEAMON="/usr/bin/barnyard2"
+prog=`basename $DEAMON`
+
+start()
+{
+        $0 status > /dev/null
+        if [ $? -eq 0 ]; then
+                echo -n $"$prog already running"
+                RETVAL=0
+                log_end_msg $RETVAL
+        else
+        log_daemon_msg "Starting $prog"
+        $DEAMON -c $CONFIG -d $IDS_LOG -G $IDS_GEN -S $IDS_SID -f $UNIFILE -w $WALDO -a $ARCHIVEDIR -D && log_end_msg $? || log_end_msg $?
+        RETVAL=$?
+        fi
+}
+
+stop()
+{
+        $0 status > /dev/null
+        if [ $? -ne 0 ]; then
+                echo $"$prog not running"
+                RETVAL=0
+        else
+        log_daemon_msg "Stopping $prog"
+        pkill -9 -f "${DEAMON}" >/dev/null 2>&1
+        RETVAL=$?
+        log_end_msg $RETVAL
+        fi
+}
+
+status ()
+{
+        log_daemon_msg "Checking if $prog is running"
+        _pids=`pgrep -f "${DEAMON}"`
+        if [ $? = 0 ] ; then
+           for p in $_pids; do pids="$pids $p"; done
+           echo -n $"$prog is running as pids$pids"
+           RETVAL=0
+        else
+             echo -n $"$prog is stopped"
+             RETVAL=3
+        fi
+        log_end_msg $RETVAL
+}
+
+case "$1" in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        restart)
+                stop
+                sleep 1
+                start
+                ;;
+        status)
+                status
+                ;;
+        *)
+                echo $"Usage: $0 {start|stop|restart|status}"
+                RETVAL=1
+esac
+exit $RETVAL

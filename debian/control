@@ -1,0 +1,16 @@
+Source: barnyard2
+Section: net
+Priority: optional
+Maintainer: Jesse Collier <jessecollier@gmail.com>
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, docbook-to-man, libmysqlclient-dev, automake, libpcap0.8, libpcap-dev
+Standards-Version: 3.6.1
+
+Package: barnyard2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: snort (>= 1.8.7), suricata (>= 1.0.0)
+Description: output spool reader for suricata and snort
+ This program decouples output overhead from the Suricata/Snort network 
+ intrusion detection system and allows Snort to run at full speed. It
+ takes input and output plugins and can therefore be used to convert
+ almost any spooled file.

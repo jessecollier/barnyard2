@@ -1,0 +1,8 @@
+CONFIG="/etc/barnyard/barnyard.conf"
+SNORT_LOG="/var/log/snort/"
+SNORT_GEN="/etc/snort/gen-msg.map"
+SNORT_SID="/etc/snort/sid-msg.map"
+SNORT_CLASS="/etc/snort/classification.config"
+UNIFILE="snort.log"
+WALDO="/var/log/barnyard/waldo.file"
+ARCHIVEDIR="/var/log/barnyard/"

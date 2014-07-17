@@ -1,0 +1,3 @@
+version=2
+
+http://www.snort.org/dl/barnyard/ barnyard-(.*)\.tar\.gz

@@ -1,0 +1,53 @@
+barnyard2 (2.1.13-1ubuntu2) trusty; urgency=low
+
+  * Fixing build
+
+ -- Jesse Collier <jessecollier@gmail.com>  Thu,  17 July 2014 02:40:43 +0800
+
+barnyard2 (2.1.13-1ubuntu1) trusty; urgency=low
+
+  * Updating barnyard to v2-1.13
+
+ -- Jesse Collier <jessecollier@gmail.com>  Thu,  17 July 2014 02:40:43 +0800
+ 
+barnyard2 (2.1.10-3ubuntu2) lucid; urgency=low
+
+  * Manually patched for a segfaul in the sguil spo
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Wed,  24 May 2012 10:32:00 +0100
+
+barnyard2 (2.1.10-1ubuntu2) lucid; urgency=low
+
+  * v2-1.10-beta2
+  * TCL support
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Wed,  16 May 2012 13:48:00 +0100
+
+barnyard2 (2.1.10-1ubuntu1) lucid; urgency=low
+
+  * barnyard2-1.10-beta1-266 straight from git
+  * NSM framework support
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Wed,  24 Aug 2011 24:03:00 +0100
+
+barnyard2 (2.1.8-10ubuntu1) lucid; urgency=low
+
+  * Added build deps again
+  * Changed configfile and etc dir name
+  * Changed log dir and initscript
+  * changed install dir for addind the binary to the deb
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Sun,  21 Nov 2010 19:21:43 +0100 
+
+barnyard2 (2.1.8-3ubuntu1) lucid; urgency=low
+
+  * Added build deps
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Sun,  21 Nov 2010 17:18:11 +0100 
+
+
+barnyard2 (2.1.8-2ubuntu1) lucid; urgency=low
+
+  * Initial Release.
+
+ -- Edward Fjellskål <edwardfjellskaal@gmail.com>  Sun,  21 Nov 2010 16:28:28 +0100 

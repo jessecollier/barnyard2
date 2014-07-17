@@ -1,0 +1,3 @@
+etc/barnyard2.conf etc/barnyard2
+debian/debian.confs/barnyard2 etc/init.d
+debian/debian.confs/default/barnyard2 etc/default
